@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.visualjavafxapp.HelloController">
+   <bottom>
+      <Pane prefHeight="101.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="name" layoutX="16.0" layoutY="14.0" prefHeight="25.0" prefWidth="163.0" text="Rolex" />
+            <TextField fx:id="price" layoutX="190.0" layoutY="14.0" prefHeight="25.0" prefWidth="102.0" text="1500" />
+             <CheckBox fx:id="isSmartWatch" layoutX="302.0" layoutY="16.0" text="Секунды" />
+            <Button layoutX="16.0" layoutY="49.0" mnemonicParsing="false" onAction="#addClock" prefHeight="25.0" prefWidth="276.0" text="Добавить" />
+            <TextField fx:id="hourInput" layoutX="417.0" layoutY="14.0" prefHeight="25.0" prefWidth="44.0" text="Часы" />
+            <TextField fx:id="minuteInput" layoutX="476.0" layoutY="14.0" prefHeight="25.0" prefWidth="44.0" text="Мин" />
+            <TextField fx:id="secondInput" layoutX="536.0" layoutY="14.0" prefHeight="25.0" prefWidth="44.0" text="Сек" />
+            <Button layoutX="417.0" layoutY="49.0" mnemonicParsing="false" onAction="#setTimeForAllWatches" prefHeight="25.0" prefWidth="164.0" text="Установить время для всех часов">
+               <font>
+                  <Font size="9.8" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </bottom>
+   <center>
+      <ScrollPane prefHeight="298.0" prefWidth="449.0" BorderPane.alignment="CENTER">
+        <content>
+            <BorderPane>
+               <center>
+                  <GridPane fx:id="allClock" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="65.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </center>
+            </BorderPane>
+        </content>
+      </ScrollPane>
+   </center>
+   <right>
+<!--       <VBox fx:id="rightPanel" alignment="CENTER_LEFT" prefHeight="298.0" prefWidth="200.0" BorderPane.alignment="CENTER">-->
+<!--           &lt;!&ndash; Тут можно добавить дочерние элементы для VBox &ndash;&gt;-->
+<!--           <Label fx:id="labelMostExpensiveClock" contentDisplay="TOP" prefHeight="18.0" prefWidth="122.0" text="Самые дорогие часы:" textAlignment="JUSTIFY" wrapText="true" />-->
+<!--           <Button fx:id="buttonShowMostExpensiveClock" onAction="#showMostExpensiveClock" text="Показать" />-->
+<!--           <Label fx:id="labelMostCommonBrand" text="Самый популярный бренд:" />-->
+<!--           <Button fx:id="buttonShowMostCommonBrand" onAction="#showMostCommonBrand" text="Показать" />-->
+<!--       </VBox>-->
+       <VBox fx:id="rightPanel" alignment="CENTER_LEFT" prefHeight="298.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+           <Label fx:id="labelMostExpensiveClock" prefWidth="200" text="Самые дорогие часы: " wrapText="true" />
+           <Button fx:id="buttonShowMostExpensiveClock" alignment="CENTER" onAction="#showMostExpensiveClock" prefHeight="26.0" prefWidth="223.0" text="Показать" />
+           <Label fx:id="labelMostCommonBrand" prefWidth="200" text="Самый популярный бренд: " wrapText="true" />
+           <Button fx:id="buttonShowMostCommonBrand" onAction="#showMostCommonBrand" prefWidth="200" text="Показать" />
+       </VBox>
+
+   </right>
+</BorderPane>
