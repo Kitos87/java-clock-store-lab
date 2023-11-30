@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Clock_Interface casioWatch = Builder.create_Watch("Watch", 10, 20, "Casio", 50.0);
-        Clock_Interface casio2Watch = Builder.create_Watch("Watch", 15, 20, "Casio", 150.0);
-        Clock_Interface rolexWatch = Builder.create_Watch("Watch", 11, 45, "Rolex", 5000.0);
-        Clock_Interface swatchWatch = Builder.create_Watch("Smart_Watch", 12, 30, 15, "Redmi Watch", 100.0);
-        Clock_Interface appleSmartWatch = Builder.create_Watch("Smart_Watch", 10, 20, 30, "Apple Watch", 400.0);
-        Clock_Interface samsungSmartWatch = Builder.create_Watch("Smart_Watch", 9, 15, 45, "Samsung Galaxy", 300.0);
+        Clock_Interface casioWatch = Builder.create_Watch("Watch", 1,10, 20, "Casio", 50.0);
+        Clock_Interface casio2Watch = Builder.create_Watch("Watch", 2,15, 20, "Casio", 150.0);
+        Clock_Interface rolexWatch = Builder.create_Watch("Watch", 3,11, 45, "Rolex", 5000.0);
+        Clock_Interface swatchWatch = Builder.create_Watch("Smart_Watch", 4,12, 30, 15, "Redmi Watch", 100.0);
+        Clock_Interface appleSmartWatch = Builder.create_Watch("Smart_Watch", 5,10, 20, 30, "Apple Watch", 400.0);
+        Clock_Interface samsungSmartWatch = Builder.create_Watch("Smart_Watch",6, 9, 15, 45, "Samsung Galaxy", 300.0);
 
         Clock_store myClockStore = new Clock_store();
         myClockStore.addClock(casioWatch);

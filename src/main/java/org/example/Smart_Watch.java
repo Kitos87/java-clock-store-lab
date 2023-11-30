@@ -6,18 +6,12 @@ public class Smart_Watch extends Watch {
     public Smart_Watch(){
         super();
     }
-    @Override
-    public double Get_Price() {
-        return super.Get_Price();
-    }
-    @Override
-    public String Get_Name() {
-        return super.Get_Name();
-    }
-    public Smart_Watch(int hour_hand, int minute_hand, int seconds_hand,String name, double price){
-        super(hour_hand, minute_hand, name, price);
+
+    public Smart_Watch(int ID, int hour_hand, int minute_hand, int seconds_hand,String name, double price){
+        super(ID, hour_hand, minute_hand, name, price);
         this.seconds_hand = seconds_hand;
     }
+
     @Override
     public void set(Enum_1 elem, int value) throws Exception {
 
@@ -47,6 +41,15 @@ public class Smart_Watch extends Watch {
         }
 
     }
+
+    @Override
+    public String Get_Time() {
+        String formattedHour = String.format("%02d", this.hour_hand);
+        String formattedMinute = String.format("%02d", this.minute_hand);
+        String formattedSecond = String.format("%02d", this.seconds_hand);
+        return formattedHour + ":" + formattedMinute + ":" + formattedSecond;
+    }
+
     @Override
     public String toString() {
         return "Brand:" + name + ", Time:" + hour_hand + ":" + minute_hand + ":" + seconds_hand + ", Price:" + price;

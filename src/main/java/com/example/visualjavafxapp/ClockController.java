@@ -75,6 +75,7 @@ public class ClockController {
                 ((Smart_Watch) p).set(Enum_1.SECOND, seconds);
             }
             updateClockDisplay(p);
+            c.updateClock(p);
         } catch (NumberFormatException ex) {
             System.out.println("Неверный формат времени!");
         } catch (Exception e) {

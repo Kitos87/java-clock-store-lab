@@ -49,10 +49,10 @@ public class HelloController implements IOserver {
         String clockName = name.getText();
         double clockPrice = Double.parseDouble(price.getText());
         if (isSmartWatch.isSelected()) {
-            Smart_Watch smartWatch = new Smart_Watch(0, 0, 0, clockName, clockPrice);
+            Smart_Watch smartWatch = new Smart_Watch(0,0, 0, 0, clockName, clockPrice);
             c.addClock(smartWatch);
         } else {
-            Watch watch = new Watch(0, 0, clockName, clockPrice);
+            Watch watch = new Watch(0,0, 0, clockName, clockPrice);
             c.addClock(watch);
         }
         if (!initialized) {
@@ -82,6 +82,7 @@ public class HelloController implements IOserver {
             }
         }
     }
+
 
     public void showMostExpensiveClock(ActionEvent actionEvent) {
         Clock_Interface mostExpensiveClock = c.getMostExpensiveClock();
@@ -123,6 +124,7 @@ public class HelloController implements IOserver {
                 if (clock instanceof Smart_Watch) {
                     ((Smart_Watch) clock).set(Enum_1.SECOND, seconds);
                 }
+                c.updateClock(clock);
             } catch (Exception e) {
                 e.printStackTrace();
             }

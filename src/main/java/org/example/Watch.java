@@ -1,9 +1,11 @@
 package org.example;
 
 public class Watch implements Clock_Interface{
+    protected int ID;
     protected int hour_hand=0;
     protected int minute_hand=0;
     protected String name;
+
     protected double price;
     public Watch(){}
     public Watch(String name, double price){
@@ -16,11 +18,34 @@ public class Watch implements Clock_Interface{
         this.name = name;
         this.price = price;
     }
+
+    public Watch(int ID, int hour_hand, int minute_hand, String name, double price){
+        this.ID = ID;
+        this.hour_hand = hour_hand;
+        this.minute_hand = minute_hand;
+        this.name = name;
+        this.price = price;
+    }
+
+    public int Get_ID() {
+        return ID;
+    }
+    public void Set_ID(int ID) {
+        this.ID = ID;
+    }
+
     public double Get_Price(){
         return price;
     }
     public String Get_Name(){
         return name;
+    }
+
+
+    public String Get_Time() {
+        String formattedHour = String.format("%02d", this.hour_hand);
+        String formattedMinute = String.format("%02d", this.minute_hand);
+        return formattedHour + ":" + formattedMinute;
     }
 
     public String toString() {
